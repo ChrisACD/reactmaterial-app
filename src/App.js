@@ -129,15 +129,7 @@ function App() {
       <CircularProgress color="secondary" />
     </div>
 
-
-
-
-
-
 </div>
-
-
-
 
 
   );
