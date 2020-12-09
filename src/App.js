@@ -9,6 +9,7 @@ import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import SaveIcon from '@material-ui/icons/Save';
+import TextField from '@material-ui/core/TextField';
 import './App.css';
 
 
@@ -42,10 +43,22 @@ const useStyles1 = makeStyles((theme) => ({
 }));
 
 
+
+const useStyles2 = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: 200,
+    },
+  },
+}));
+
+
 function App() {
   const classes = useStyles();
   const classe = useStyle();
   const classe1 = useStyles1();
+  const classes2 = useStyles2();
 
 
   return (
@@ -129,9 +142,60 @@ function App() {
       <CircularProgress color="secondary" />
     </div>
 
-</div>
 
 
+
+<form className={classes2.root} noValidate autoComplete="off">
+      <div>
+        <TextField error id="standard-error" label="Error" defaultValue="Hello World" />
+        <TextField
+          error
+          id="standard-error-helper-text"
+          label="Error"
+          defaultValue="Hello World"
+          helperText="Incorrect entry."
+        />
+      </div>
+      <div>
+        <TextField
+          error
+          id="filled-error"
+          label="Error"
+          defaultValue="Hello World"
+          variant="filled"
+        />
+        <TextField
+          error
+          id="filled-error-helper-text"
+          label="Error"
+          defaultValue="Hello World"
+          helperText="Incorrect entry."
+          variant="filled"
+        />
+      </div>
+      <div>
+        <TextField
+          error
+          id="outlined-error"
+          label="Error"
+          defaultValue="Hello World"
+          variant="outlined"
+        />
+        <TextField
+          error
+          id="outlined-error-helper-text"
+          label="Error"
+          defaultValue="Hello World"
+          helperText="Incorrect entry."
+          variant="outlined"
+        />
+      </div>
+    </form>
+
+
+
+
+    </div>
   );
 }
 export default App;
